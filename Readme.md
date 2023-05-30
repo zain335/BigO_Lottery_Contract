@@ -1,0 +1,6 @@
+### Randomness
+generate random number using hashing of block.timestamp, block.prevrandao(difficulty),participants list and seed.
+seed is a seperate value that is add to imporve randomness and to reduce possibility of attack.
+any one can call function addRandomness with some seed value then a new hash will be calculated using current and previous seed values and this has value will be set to current seed. 
+The reason to add this is to reduce the risk of hack incase minners/validators compormised. In that sanario when ever someone call the addRandomness function it will change the seed that will be used to calculate the random number. so it will be more difficult now to hack as its hard to predict / calculate. But still its not 100% secure or true random function. And it is highly unlikely to achieve true randomness in case of blockchian as all the data is public. (seed is also public but it could be change any time).
+Other approach to achieve randomness is off-chain solutions provided by 3rd parties like ChainLink VRF. buy in that case we have to rely on them.
